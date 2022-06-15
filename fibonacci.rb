@@ -1,13 +1,14 @@
 # frozen_string_literal: true
 
 # iterative fibonacci
-def fibs(num)
+def fibs(num, arr = [])
   [0, 1, 0] => [a, b, c] # rightward assignment
   num.times do
+    arr << c
     c = b
     a, b = b, a + b
   end
-  puts c
+  arr
 end
 
 # recursive fibonacci
