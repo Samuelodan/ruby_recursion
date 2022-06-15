@@ -12,8 +12,10 @@ end
 
 # recursive fibonacci
 def fibs_rec(num)
-  return 0 if num.zero?
-  return 1 if num == 1
+  return [] if num.zero?
+  return [0] if num == 1
+  return [0, 1] if num == 2
 
-  fibs_rec(num - 1) + fibs_rec(num - 2)
+  seq = fibs_rec(num - 1)
+  seq << seq[-2] + seq[-1]
 end
