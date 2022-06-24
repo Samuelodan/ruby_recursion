@@ -16,11 +16,12 @@ end
 def merge(left, right)
   new_arr = []
   until left.empty? || right.empty?
-    if left.first > right.first
-      new_arr << right.shift
-    else
-      new_arr << left.shift
-    end
+    new_arr <<
+      if left.first > right.first
+        right.shift
+      else
+        left.shift
+      end
   end
   new_arr << left.shift until left.empty?
   new_arr << right.shift until right.empty?
